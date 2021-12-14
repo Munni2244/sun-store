@@ -1,0 +1,13 @@
+.banner2{
+    background-image: url('../../../Images/bn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    background-position: center;
+    margin-top: 80px;
+    background-attachment: fixed;
+}
+.banner2 button{
+    border: 1px solid white;
+    border-radius: 20px;
+}

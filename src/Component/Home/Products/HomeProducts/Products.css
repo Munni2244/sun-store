@@ -1,0 +1,27 @@
+.add-btn{
+opacity: 0;
+}
+
+.img-box:hover {
+    opacity: 0.5;
+  }
+
+.img-box:hover .add-btn{
+opacity: 1;
+border-radius: 20px;
+border: 1px solid black;
+
+  }
+
+  .bot-shoes{
+      background-color: rgb(7, 7, 7);
+      filter: opacity(.8);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      color: white;
+     
+  }
+  
+ 
+      
