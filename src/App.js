@@ -7,25 +7,45 @@ import MoreProducts from './Component/Home/Products/MoreProducts/MoreProducts';
 import Contact from './Component/Home/Contact/Contact';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
 import MyOrders from './Component/Dashboard/Orders/MyOrders/MyOrders';
+import DashboardHome from './Component/Dashboard/Dashboard/DashboardHome';
+import AllOrders from './Component/Dashboard/Orders/AllOrders/AllOrders';
+import ManageProducts from './Component/Dashboard/ManageProducts/ManageProducts';
+import AddAdmin from './Component/Dashboard/AddAdmin/AddAdmin';
+import AddReviews from './Component/Dashboard/AddReviews/AddReviews';
+import OrderPlace from './Component/OrderPlace/OrderPlace';
+import Login from './Component/UserLogin/Login/Login';
+import AuthProvider from './Component/Context/AuthProvider';
+import Register from './Component/UserLogin/Register/Register';
 
 function App() {
   return (
     <div >
-      <BrowserRouter>
+     <AuthProvider>
+     <BrowserRouter>
      
-      <Routes>
-        <Route path="/" element={<Home></Home>}>
-        <Route path="home" element={<Home></Home>}></Route>
-        </Route>
-        <Route path="moreProducts" element={<MoreProducts></MoreProducts>}></Route>
-        <Route path="contact" element={<Contact></Contact>}></Route>
-        
-        <Route path="dashboard" element={<Dashboard></Dashboard>}>
-        <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+     <Routes>
+       <Route path="/" element={<Home></Home>}>
+       <Route path="home" element={<Home></Home>}></Route>
+       </Route>
+       <Route path="moreProducts" element={<MoreProducts></MoreProducts>}></Route>
+       <Route path="contact" element={<Contact></Contact>}></Route>
+       
+       <Route path="dashboard" element={<Dashboard></Dashboard>}>
+       <Route path="/dashboard" element={<DashboardHome/>}></Route>
+       <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+       <Route path="allOrders" element={<AllOrders></AllOrders>}></Route>
+       <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
+       <Route path="addAdmin" element={<AddAdmin></AddAdmin>}></Route>
+       <Route path="review" element={<AddReviews></AddReviews>}></Route>
+     
 
-        </Route>
-      </Routes>
-      </BrowserRouter>
+       </Route>
+       <Route path=":orderId" element={<OrderPlace></OrderPlace>}></Route>
+       <Route path="login" element={<Login></Login>}></Route>
+       <Route path="register" element={<Register></Register>}></Route>
+     </Routes>
+     </BrowserRouter>
+     </AuthProvider>
    
     </div>
   );

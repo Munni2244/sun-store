@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Adidas",
+      "id": "1",
+      "price":"550",
+      "desc": "adidas Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/hGYjdXSq/img1.jpg"
+    },
+    {
+      "name": "Crocs ",
+      "id": "2",
+      "price":"670",
+      "desc": "Crocs Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/L6mHhtz1/img16.jpg"
+    },
+    {
+      "name": "Puma",
+      "id": "3",
+      "price":"850",
+      "desc": "Puma Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/Xqf7mx9V/img5.jpg"
+    },
+    {
+      "name": "Vans",
+      "id": "4",
+      "price":"650",
+      "desc": "Vans Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/3JZxZSK1/img6.jpg"
+    },
+    {
+      "name": "Lotto ",
+      "id": "5",
+      "price":"356",
+      "desc": "Lotto Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/c4Td3vm5/img17.jpg"
+    },
+    {
+      "name": "Bata",
+      "id": "6",
+      "price":"700",
+      "desc": "Bata Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/Y0Ht6gZT/img10.jpg"
+    }
+  ]

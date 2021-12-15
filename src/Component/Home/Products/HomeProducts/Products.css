@@ -9,7 +9,8 @@ opacity: 0;
 .img-box:hover .add-btn{
 opacity: 1;
 border-radius: 20px;
-border: 1px solid black;
+border: 3px solid rgb(197, 193, 193);
+color: blanchedalmond;
 
   }
 
