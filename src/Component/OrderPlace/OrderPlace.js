@@ -1,64 +1,84 @@
 import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import img from '../../Images/img21.jpg'
+import Swal from 'sweetalert2';
+import useAuth from '../../Hooks/useAuth';
 import Navigation from '../Home/Navigation/Navigation';
+import './OrderPlace.css'
 
 const OrderPlace = () => {
+    const {user}=useAuth();
     const {orderId}=useParams();
-    // const [orders, setOrders]=useState({});
-    // useEffect(()=>{
-    //     fetch(`./FakeData.json`)
-    //     .then(res=> res.json())
-    //     .then(data=> setOrders(data))
-    // },[])
+    const [orders, setOrders]=useState({});
+    const { register, handleSubmit } = useForm();
 
+   
+    // get placeorders 
+    useEffect(()=>{
+        fetch(`http://localhost:4000/products/${orderId}`)
+        .then(res=> res.json())
+        .then(data=> setOrders(data))
+    },[])
 
+    //post order
+    const onSubmit = data => {
+        data.status = 'Pending';
+        data.title = `${orders.name}`;
+        data.price = `${orders.price}`;
+        data.img = `${orders.img}`;
+        data.name = `${user.displayName}`;
+        data.email = `${user.email}`;
+        fetch('http://localhost:4000/orders', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'Good job!',
+                        'Booking Successfully!'
+                    )
+
+                }
+
+                console.log(data);
+            })
+    };
+   
+
+// console.log(orders._id);
     return (
        
        <div>
            <Navigation></Navigation>
-            <div className='container'>
-            <div className='row'>
-                <h1>order {orderId.length}</h1>
-                <div className='col-12 col-lg-8 col-md-8'>
+            <div className='container mt-5'>
+            <div className='row '>
+              
+                <div className='col-12 col-lg-8 col-md-8 mt-3'>
                     <div>
-                        <img width="100%" height="500px" src={img} alt="" />
-                        <h3>Name</h3>
-                        <p>546</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat harum distinctio numquam debitis eveniet nesciunt itaque et quibusdam fuga, velit, iste commodi obcaecati vero doloribus. Fugit autem expedita aperiam explicabo.</p>
+                        <img width="100%" height="500px" src={orders.img} alt="" />
+                        <h2>{orders.name}</h2>
+                        <h4 className='fw-bold'>${orders.price}</h4>
+                        <p className='text-secondary fw-bold'>{orders.desc}</p>
                     </div>
 
                 </div>
                 <div className='col-12 col-lg-4 col-md-4'>
-                    <div className='text-center'>
+                    <div className='text-center formStyle'>
                     <h1 className="mb-4 text-center fw-bold">Order Submit</h1>
-                        <form >
-                        <div >
-                                <input name="name" type="text" style={{ width: '85%' }} className="mb-1 p-2 rounded-pill  field" placeholder=" Your Name" />
-                            </div>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                                <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''} disabled /> <br />
+                                <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''} disabled /> <br />
 
-                            <br />
-                            <div >
-                                <input name="email" type="email" style={{ width: '85%' }} className="mb-1 p-2 rounded-pill  field" placeholder=" Your Image" />
-                            </div>
+                                <input type="text" {...register("address")} placeholder="Address" /> <br />
+                                <input type="date" {...register("date")} placeholder="date" /> <br />
 
-                            <br />
-                            
-                            <div >
-                                <input name="date" type="date" style={{ width: '85%' }} className="mb-1 p-2 rounded-pill  field" placeholder=" " />
-                            </div>
+                                <input type="number" {...register("number")} placeholder="Number" /> <br />
+                                <input className='bg-dark text-light' type="submit" />
 
-                            <br />
-                            <div >
-                                <input name="address" type="text" style={{ width: '85%' }} className="mb-2 p-2 rounded-pill  field" placeholder=" Your Address" />
-                            </div>
-
-                            <br />
-                            <button type="submit" style={{ width: '85%', backgroundColor: '#000066' }} className=" p-2 text-light  rounded-pill mb-3">Submit</button>
-                            <div>
-
-                            </div>
-                        </form>
+                            </form>
                     </div>
 
                 </div>

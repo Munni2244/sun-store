@@ -5,7 +5,7 @@ const Review = () => {
   const [Reviews, setReviews]= useState([]);
 
   useEffect(()=>{
-      fetch('./FakeData.json')
+      fetch('http://localhost:4000/reviews')
       .then(res=> res.json())
       .then(data=>setReviews(data))
   },[])

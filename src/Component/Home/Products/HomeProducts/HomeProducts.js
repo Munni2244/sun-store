@@ -11,7 +11,7 @@ const HomeProducts = () => {
     const [homeProducts, setHomeProducts]= useState([]);
 
     useEffect(()=>{
-        fetch('./FakeData.json')
+        fetch('http://localhost:4000/products')
         .then(res=> res.json())
         .then(data=>setHomeProducts(data))
     },[])
@@ -37,12 +37,12 @@ const HomeProducts = () => {
                         <img className='card-img' width="280px" height="300px" src={products?.img} alt="" />
                         <div className='card-img-overlay d-flex justify-content-center align-items-center'>
                            
-                           <Link to={`/orderId/${products.id}`}>
+                           <Link to={`/products/${products._id}`}>
                            <button  style={{ marginTop: '100px' }} className='btn  add-btn'>Add to cart</button>
                            </Link>
                         </div>
-                        <h6 className='text-secondary'>{products.name}</h6>
-                        <h4>{products.price}</h4>
+                        <h5 className='text-secondary'>{products.name}</h5>
+                        <h6 className='fw-bold'>${products.price}</h6>
                     </div>
                         )
                 }

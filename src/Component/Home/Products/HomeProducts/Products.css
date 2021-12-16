@@ -4,6 +4,7 @@ opacity: 0;
 
 .img-box:hover {
     opacity: 0.5;
+    
   }
 
 .img-box:hover .add-btn{

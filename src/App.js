@@ -16,6 +16,7 @@ import OrderPlace from './Component/OrderPlace/OrderPlace';
 import Login from './Component/UserLogin/Login/Login';
 import AuthProvider from './Component/Context/AuthProvider';
 import Register from './Component/UserLogin/Register/Register';
+import AddProducts from './Component/Dashboard/Dashboard/AddProducts/AddProducts';
 
 function App() {
   return (
@@ -37,10 +38,11 @@ function App() {
        <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
        <Route path="addAdmin" element={<AddAdmin></AddAdmin>}></Route>
        <Route path="review" element={<AddReviews></AddReviews>}></Route>
+       <Route path="addProducts" element={<AddProducts></AddProducts>}></Route>
      
 
        </Route>
-       <Route path=":orderId" element={<OrderPlace></OrderPlace>}></Route>
+       <Route path="/products/:orderId" element={<OrderPlace></OrderPlace>}></Route>
        <Route path="login" element={<Login></Login>}></Route>
        <Route path="register" element={<Register></Register>}></Route>
      </Routes>

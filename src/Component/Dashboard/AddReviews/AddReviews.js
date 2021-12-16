@@ -1,8 +1,33 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import useAuth from '../../../Hooks/useAuth';
 import review from '../../../Images/review.jpg'
 
 const AddReviews = () => {
+    const {user}=useAuth();
+    const { register, handleSubmit } = useForm();
 
+    const onSubmit = data => {
+        data.name=`${user.displayName}`
+        fetch('http://localhost:4000/addReview', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'Good job!',
+                        'Add Review Successfully!'
+                    )
+
+                }
+
+                console.log(data);
+            })
+    };
     return (
         <div>
 
@@ -14,34 +39,19 @@ const AddReviews = () => {
 
                 <div className='col-12 col-lg-6'>
                     <div style={{ marginTop: '50px' }} className="col-12 col-lg-12 text-center">
-                        <h1 className="mb-4">Give Your Reviews</h1>
-                        <form >
+                    <div className='text-center formStyle'>
+                    <h1 className="mb-4 text-center fw-bold">Add Your Review</h1>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                                <input {...register("name")} placeholder=" Your Name" defaultValue={user.displayName} /> <br />
+                                <input {...register("img")} placeholder="Your img" required /> <br />
 
-                            <div >
-                                <input name="image" type="url" style={{ width: '85%' }} className="mb-1 p-2 rounded-pill  field" placeholder=" Your Image" />
-                            </div>
+                                <input type="text" {...register("message")} placeholder="Enter your message" /> <br />
 
-                            <br />
-                            <div >
-                                <input name="name" type="text" style={{ width: '85%' }} className="mb-1 p-2 rounded-pill  field" placeholder=" Your Name" />
-                            </div>
+                                <input type="number" {...register("rating",{ required: true, min: 1, max: 5 })} placeholder=" Rating (number 1 To 5)" /><br />
+                                <input style={{backgroundColor:'#000066', width:'70%'}} className=' text-light' type="submit" />
 
-                            <br />
-                            <div >
-                                <input name="description" type="text" style={{ width: '85%' }} className="mb-1 p-2 rounded-pill  field" placeholder=" message" />
-                            </div>
-
-                            <br />
-                            <div >
-                                <input name="rating" type="number" style={{ width: '85%' }} className="mb-2 p-2 rounded-pill  field" placeholder=" Your Rating" />
-                            </div>
-
-                            <br />
-                            <button type="submit" style={{ width: '55%', backgroundColor: '#000066' }} className=" p-2 text-light  rounded-pill mb-3">Submit</button>
-                            <div>
-
-                            </div>
-                        </form>
+                            </form>
+                    </div>
                     </div>
 
                 </div>

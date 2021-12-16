@@ -1,0 +1,17 @@
+
+.formStyle form input{
+    margin-top: 15px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    
+}
+.formStyle{
+    width: 100%;
+    color: rgb(12, 1, 1);
+    margin: 20px;
+}
+form input:hover{
+    border: 1px solid blue;
+    box-shadow: 5px 5px 5px 5px gray;
+}
