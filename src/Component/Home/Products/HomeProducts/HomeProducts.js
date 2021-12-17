@@ -33,7 +33,7 @@ const HomeProducts = () => {
                     <div className='row'>
                     {
                     homeProducts?.slice(0,4).map(products=> 
-                        <div style={{ border: 'none' }} className='card img-box col-12 col-lg-6 col-md-6'>
+                        <div  key={products._id} style={{ border: 'none' }} className='card img-box col-12 col-lg-6 col-md-6'>
                         <img className='card-img' width="280px" height="300px" src={products?.img} alt="" />
                         <div className='card-img-overlay d-flex justify-content-center align-items-center'>
                            

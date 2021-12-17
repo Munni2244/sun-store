@@ -55,8 +55,9 @@ const ManageProducts = () => {
             <div style={{marginTop:'50px'}} className='row'>
                 <h1 className='text-center m-5 fw-bold'>More Products Here</h1>
                 {
-                    manageProducts?.map(products=>
-                        <div  className='col-12 col-lg-4 col-md-6  mb-5'>
+                    manageProducts?.map(products=> 
+                       
+                        <div  key={products._id}  className='col-12 col-lg-4 col-md-6  mb-5'>
                         <div style={{ backgroundColor:"#000066"}} className=' text-center text-light p-4'> 
                             <img src={products.img} width="260px" height="260px" alt="" />
                             <div className='d-flex '>

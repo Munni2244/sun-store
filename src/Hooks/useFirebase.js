@@ -20,7 +20,7 @@ Initialization();
             .then((userCredential) => {
                 const newUser={email, displayName:name};
                 setUser(newUser);
-                // saveUser(email, name)
+                saveUser(email, name)
                 updateProfile(auth.currentUser, {
                     displayName: name
                   }).then(() => {
@@ -84,28 +84,28 @@ Initialization();
         }
     
         //post user
-        // const saveUser=(email, displayName)=>{
-        //     const user={email,displayName}
-        // fetch('https://damp-eyrie-28424.herokuapp.com/addUserInfo',{
-        //     method: "POST",
-        //     headers:{ 'content-type' : 'application/json'},
-        //     body:JSON.stringify(user)
-        // })
-        // .then(res=>res.json())
-        // .then(data=> console.log(data))
-        // }
+        const saveUser=(email, displayName)=>{
+            const user={email,displayName}
+        fetch('http://localhost:4000/addUserInfo',{
+            method: "POST",
+            headers:{ 'content-type' : 'application/json'},
+            body:JSON.stringify(user)
+        })
+        .then(res=>res.json())
+        .then(data=> console.log(data))
+        }
       
-        // //get admin
-        // useEffect(()=>{
-        //     fetch(`https://damp-eyrie-28424.herokuapp.com/users/${user?.email}`)
-        //     .then(res=>res.json())
-        //     .then(data=>setAdmin(data?.admin))
+        //get admin
+        useEffect(()=>{
+            fetch(`http://localhost:4000/users/${user?.email}`)
+            .then(res=>res.json())
+            .then(data=>setAdmin(data?.admin))
     
-        // },[user.email])
+        },[user.email])
     
         return {
             user,
-            // admin,
+            admin,
             RegisterUser,
             loading,
             loginUser,

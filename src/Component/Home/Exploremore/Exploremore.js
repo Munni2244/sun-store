@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Exploremore.css';
 import video1 from '../../../video/video.mp4';
 import { Link } from 'react-router-dom';
 
 const Exploremore = () => {
+  
     return (
         <div>
             <div className='banner2 d-flex justify-content-center align-items-center text-light'>
@@ -12,7 +13,7 @@ const Exploremore = () => {
                     <h1> Stock Limited </h1>
                     <p>Shoes SeLL now up To 50% Discount, Order Now</p>
                    <Link to="moreProducts"> 
-                   <button className=' btn text-light'>Explore More Products</button>
+                   <button className=' btn text-light fw-bold'>Explore More Products</button>
                    </Link>
                 </div>
 

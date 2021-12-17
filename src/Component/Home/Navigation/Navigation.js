@@ -35,12 +35,11 @@ const Navigation = () => {
               <li className="nav-item">
                   <Link to="/cart" className="nav-link active"><h5><i className="fas fa-cart-plus"></i></h5></Link>
                 </li>
-                {
-                 user.email && 
+                
                  <li className="nav-item active ">
                    <Link to="/dashboard" className="nav-link active"><h5>DashBoard</h5></Link>
                  </li>
-                }
+                
                
                 {
                   !user.email && <ul className="navbar-nav me-auto mb-2 mb-lg-0">

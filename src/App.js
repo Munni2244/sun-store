@@ -17,6 +17,7 @@ import Login from './Component/UserLogin/Login/Login';
 import AuthProvider from './Component/Context/AuthProvider';
 import Register from './Component/UserLogin/Register/Register';
 import AddProducts from './Component/Dashboard/Dashboard/AddProducts/AddProducts';
+import PrivateRoute from './Component/UserLogin/PrivateRoute';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
        <Route path="moreProducts" element={<MoreProducts></MoreProducts>}></Route>
        <Route path="contact" element={<Contact></Contact>}></Route>
        
-       <Route path="dashboard" element={<Dashboard></Dashboard>}>
+       <Route path="dashboard" element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
        <Route path="/dashboard" element={<DashboardHome/>}></Route>
        <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
        <Route path="allOrders" element={<AllOrders></AllOrders>}></Route>
@@ -42,7 +43,7 @@ function App() {
      
 
        </Route>
-       <Route path="/products/:orderId" element={<OrderPlace></OrderPlace>}></Route>
+       <Route path="/products/:orderId" element={<PrivateRoute><OrderPlace></OrderPlace></PrivateRoute>}></Route>
        <Route path="login" element={<Login></Login>}></Route>
        <Route path="register" element={<Register></Register>}></Route>
      </Routes>

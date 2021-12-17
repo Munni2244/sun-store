@@ -57,7 +57,7 @@ const MyOrders = () => {
                     
                  {
                      myOrders?.map(myOrder=> 
-                        <div  className="col-12 col-lg-6 col-md-6 mt-3  p-2">
+                        <div  key={myOrder._id}  className="col-12 col-lg-6 col-md-6 mt-3  p-2">
                         <div className="row ">
                         <div className="col-12 col-md-6 col-lg-6">
                         <div><img width="100%" height="150px" src={myOrder.img} alt="" /></div>
