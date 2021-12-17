@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState, } from 'react';
 import Swal from 'sweetalert2';
 
 const AllOrders = () => {
     const [allOrders, setAllOrders]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:4000/allOrders')
+        fetch('https://blooming-meadow-50062.herokuapp.com/allOrders')
         .then(res=> res.json())
         .then(data=> setAllOrders(data))
     },[allOrders])
@@ -24,7 +23,7 @@ const AllOrders = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/orders/${id}`, {
+                fetch(`https://blooming-meadow-50062.herokuapp.com/orders/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -52,7 +51,7 @@ const AllOrders = () => {
 
     ///update Booking
     const ApproveBooking = (id) => {
-        fetch(`http://localhost:4000/updateOrders/${id}`, {
+        fetch(`https://blooming-meadow-50062.herokuapp.com/updateOrders/${id}`, {
             method: "PUT",
         })
             .then(res => res.json())

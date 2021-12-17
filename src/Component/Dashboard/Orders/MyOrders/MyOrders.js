@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect,useState } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../../../Hooks/useAuth';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const MyOrders = () => {
     const {user}=useAuth();
     const [myOrders, setMyOrders]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:4000/myOrders/${user?.email}`)
+        fetch(`https://blooming-meadow-50062.herokuapp.com/myOrders/${user?.email}`)
         .then(res=> res.json())
         .then(data=>setMyOrders(data))
+        AOS.init();
+
     },[myOrders])
 
     const cancelOrder=(id)=>{
@@ -24,7 +27,7 @@ const MyOrders = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/orders/${id}`, {
+                fetch(`https://blooming-meadow-50062.herokuapp.com/orders/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -57,7 +60,7 @@ const MyOrders = () => {
                     
                  {
                      myOrders?.map(myOrder=> 
-                        <div  key={myOrder._id}  className="col-12 col-lg-6 col-md-6 mt-3  p-2">
+                        <div data-aos="zoom-out-left" key={myOrder._id}  className="col-12 col-lg-6 col-md-6 mt-3  p-2">
                         <div className="row ">
                         <div className="col-12 col-md-6 col-lg-6">
                         <div><img width="100%" height="150px" src={myOrder.img} alt="" /></div>

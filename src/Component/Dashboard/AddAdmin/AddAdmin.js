@@ -12,7 +12,7 @@ const AddAdmin = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const user={email};
-        fetch('http://localhost:4000/addAdmin',{
+        fetch('https://blooming-meadow-50062.herokuapp.com/addAdmin',{
          method: "PUT",
          headers:{ "content-type": "application/json"},
          body: JSON.stringify(user)

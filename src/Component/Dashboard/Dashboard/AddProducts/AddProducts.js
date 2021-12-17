@@ -6,7 +6,7 @@ const AddProducts = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:4000/products', {
+        fetch('https://blooming-meadow-50062.herokuapp.com/products', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -16,7 +16,7 @@ const AddProducts = () => {
                 if (data.acknowledged) {
                     Swal.fire(
                         'Good job!',
-                        'Add Review Successfully!'
+                        'Add Products Successfully!'
                     )
 
                 }

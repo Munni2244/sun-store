@@ -1,7 +1,18 @@
 import React from 'react';
+import useAuth from '../../../Hooks/useAuth';
 import admin from '../../../Images/admin.png'
 
 const DashboardHome = () => {
+    const {loading}=useAuth();
+    if(loading){
+        return(
+            <div class="d-flex justify-content-center mt-4">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )
+    }
     return (
         <div className='row'>
             <div className='col-12 col-lg-6'>

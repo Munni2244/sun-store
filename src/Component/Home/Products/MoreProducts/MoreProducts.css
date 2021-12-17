@@ -1,6 +1,13 @@
-.moreProducts:hover .product{
+ .product{
 border-bottom: 1px solid gray;
-}
-.moreProducts:hover{
     background-color: #E7E9EB;
+
+}
+.moreProducts:hover .product{
+border-bottom: 2px solid red;
+}
+
+.product button:hover{
+    background-color: rgb(39, 36, 36);
+    color: white;
 }

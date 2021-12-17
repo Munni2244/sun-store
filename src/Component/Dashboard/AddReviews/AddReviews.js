@@ -10,7 +10,7 @@ const AddReviews = () => {
 
     const onSubmit = data => {
         data.name=`${user.displayName}`
-        fetch('http://localhost:4000/addReview', {
+        fetch('https://blooming-meadow-50062.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

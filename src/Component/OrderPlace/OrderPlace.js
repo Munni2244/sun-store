@@ -15,7 +15,7 @@ const OrderPlace = () => {
    
     // get placeorders 
     useEffect(()=>{
-        fetch(`http://localhost:4000/products/${orderId}`)
+        fetch(`https://blooming-meadow-50062.herokuapp.com/products/${orderId}`)
         .then(res=> res.json())
         .then(data=> setOrders(data))
     },[])
@@ -28,7 +28,7 @@ const OrderPlace = () => {
         data.img = `${orders.img}`;
         data.name = `${user.displayName}`;
         data.email = `${user.email}`;
-        fetch('http://localhost:4000/orders', {
+        fetch('https://blooming-meadow-50062.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

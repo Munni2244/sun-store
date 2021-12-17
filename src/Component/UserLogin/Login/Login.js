@@ -41,7 +41,7 @@ const Login = () => {
                 </div> <br />
                 <button type="submit" style={{ width: '35%' }} className=" p-2   rounded-pill mb-3">Submit</button>
                 <div>
-                <Link style={{color:'pink'}} to="/register">Are You New User? Please Register!</Link>
+                <Link style={{color:'red'}} to="/register">Are You New User? Please Register!</Link>
                 </div>
             </form>
         </div>

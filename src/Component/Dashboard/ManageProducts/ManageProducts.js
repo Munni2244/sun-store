@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import img from '../../../Images/img13.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import useAuth from '../../../Hooks/useAuth';
 
 const ManageProducts = () => {
+    const {loading}=useAuth();
+
     const [manageProducts, setManageProducts]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/products')
+        fetch('https://blooming-meadow-50062.herokuapp.com/products')
         .then(res=> res.json())
         .then(data=> setManageProducts(data))
+        AOS.init();
+
     },[manageProducts])
   
     //remove products
@@ -24,7 +29,7 @@ const ManageProducts = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/products/${id}`, {
+                fetch(`https://blooming-meadow-50062.herokuapp.com/products/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -49,6 +54,16 @@ const ManageProducts = () => {
 
     }
 
+    if(loading){
+        return(
+            <div class="d-flex justify-content-center mt-4">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )
+    }
+
     return (
         <div>
              <div className='container'>
@@ -57,7 +72,7 @@ const ManageProducts = () => {
                 {
                     manageProducts?.map(products=> 
                        
-                        <div  key={products._id}  className='col-12 col-lg-4 col-md-6  mb-5'>
+                        <div  data-aos="flip-up"  key={products._id}  className='col-12 col-lg-4 col-md-6  mb-5'>
                         <div style={{ backgroundColor:"#000066"}} className=' text-center text-light p-4'> 
                             <img src={products.img} width="260px" height="260px" alt="" />
                             <div className='d-flex '>

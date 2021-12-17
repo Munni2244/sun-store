@@ -2,17 +2,17 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
-const PrivateRoute = ({children, ...rest}) => {
+const DashBoardRoute = ({children, ...rest}) => {
     const {user, loading} = useAuth();
     let location = useLocation();
 
     if(loading){
-      return   <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+        return  <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
-    </div> 
-      
+       
     };
             if(user.email){
                 return children;
@@ -22,4 +22,4 @@ const PrivateRoute = ({children, ...rest}) => {
             return <Navigate to="/login" state={{ from: location }} />;
 };
 
-export default PrivateRoute;
+export default DashBoardRoute;

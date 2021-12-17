@@ -86,7 +86,7 @@ Initialization();
         //post user
         const saveUser=(email, displayName)=>{
             const user={email,displayName}
-        fetch('http://localhost:4000/addUserInfo',{
+        fetch('https://blooming-meadow-50062.herokuapp.com/addUserInfo',{
             method: "POST",
             headers:{ 'content-type' : 'application/json'},
             body:JSON.stringify(user)
@@ -97,11 +97,13 @@ Initialization();
       
         //get admin
         useEffect(()=>{
-            fetch(`http://localhost:4000/users/${user?.email}`)
+            setLoading(true);
+            fetch(`https://blooming-meadow-50062.herokuapp.com/users/${user?.email}`)
             .then(res=>res.json())
             .then(data=>setAdmin(data?.admin))
+            .finally(()=> setLoading(false))
     
-        },[user.email])
+        },[user.email]);
     
         return {
             user,

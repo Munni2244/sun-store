@@ -1,0 +1,12 @@
+.contact{
+    background-image: url('../../../Images//contact.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+height: 600px;
+}
+.fieldContact{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}

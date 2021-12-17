@@ -1,17 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import img from '../../../../Images/img15.jpg'
 import Navigation from '../../Navigation/Navigation';
 import './MoreProducts.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import useAuth from '../../../../Hooks/useAuth';
 
 const MoreProducts = () => {
+    const {loading}=useAuth();
     const [moreProducts, setMoreProducts]= useState([]);
-
+   
     useEffect(()=>{
-        fetch('http://localhost:4000/products')
+        fetch('https://blooming-meadow-50062.herokuapp.com/products')
         .then(res=> res.json())
         .then(data=>setMoreProducts(data))
+        AOS.init();
+
     },[])
+
+    if(loading){
+        return(
+            <div class="d-flex justify-content-center mt-4">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )
+    }
     return (
         <div  >
             <Navigation></Navigation>
@@ -21,7 +36,7 @@ const MoreProducts = () => {
                 <h1 className='text-center m-5 fw-bold'>More Products Here</h1>
                 {
                     moreProducts?.map(products=>
-                        <div  key={products._id} className='col-12 col-lg-3 col-md-6 moreProducts mb-5'>
+                        <div data-aos="flip-up"    key={products._id} className='col-12 col-lg-3 col-md-6 moreProducts mb-5'>
                     <div className='product'> 
                         <img src={products.img} width="260px" height="260px" alt="" />
                         <div className='d-flex '>
