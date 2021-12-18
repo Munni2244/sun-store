@@ -36,29 +36,27 @@ const Navigation = () => {
                   <Link to="/cart" className="nav-link active"><h5><i className="fas fa-cart-plus"></i></h5></Link>
                 </li>
                 
-                 <li className="nav-item active ">
+                 {user.email ?<div className='d-flex'>
+                  <li className="nav-item active ">
                    <Link to="/dashboard" className="nav-link active"><h5>DashBoard</h5></Link>
                  </li>
-                
-               
-                {
-                  !user.email && <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                 <span className='mx-3'><h3>{user?.displayName}</h3></span>
+                 <button style={{ border: '1px solid blue', borderRadius: '20px', height: '40px' }} onClick={logOut} className='btn'><i className="fas fa-sign-out-alt me-2"></i> LogOut</button>
+                 </div> :<ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item active">
                   <Link to="/register" className="nav-link active"><h5>Register </h5></Link>
                 </li> 
                   <li className="nav-item active">
                     <Link to="/login" className="nav-link active"><h5>Login </h5></Link>
                   </li>
-                  </ul>
+                  </ul>}
                 
-                }
-                 {
-                  user?.email && <span className='mx-3'><h3>{user?.displayName}</h3></span>
-                }
+               
+               
 
               </ul>
 
-             {user.email &&  <button style={{ border: '1px solid blue', borderRadius: '20px', height: '40px' }} onClick={logOut} className='btn'><i className="fas fa-sign-out-alt me-2"></i> LogOut</button>}
+             
             </form>
           </div>
         </div>
