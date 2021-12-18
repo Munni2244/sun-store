@@ -69,8 +69,8 @@ const OrderPlace = () => {
                     <div className='text-center formStyle'>
                     <h1 className="mb-4 text-center fw-bold">Order Submit</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                                <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''} disabled /> <br />
-                                <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''} disabled /> <br />
+                                <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''}  /> <br />
+                                <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''}  /> <br />
 
                                 <input type="text" {...register("address")} placeholder="Address" /> <br />
                                 <input type="date" {...register("date")} placeholder="date" /> <br />
