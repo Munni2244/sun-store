@@ -17,7 +17,7 @@ const Exploremore = () => {
                 <div data-aos="zoom-in" className='text-center'>
                     <h1> Stock Limited </h1>
                     <p>Shoes SeLL now up To 50% Discount, Order Now</p>
-                    <Link to="moreProducts">
+                    <Link to="/moreProducts">
                         <button className=' btn text-light fw-bold'>Explore More Products</button>
                     </Link>
                 </div>

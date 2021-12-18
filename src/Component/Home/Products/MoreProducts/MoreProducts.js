@@ -5,6 +5,7 @@ import './MoreProducts.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import useAuth from '../../../../Hooks/useAuth';
+import Footer from '../../Footer/Footer';
 
 const MoreProducts = () => {
     const {loading}=useAuth();
@@ -59,6 +60,7 @@ const MoreProducts = () => {
             
             </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

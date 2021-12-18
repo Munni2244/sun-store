@@ -4,7 +4,7 @@ border-bottom: 1px solid gray;
 
 }
 .moreProducts:hover .product{
-border-bottom: 2px solid red;
+border-bottom: 5px solid #000088;
 }
 
 .product button:hover{

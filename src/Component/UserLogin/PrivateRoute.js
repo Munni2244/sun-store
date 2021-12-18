@@ -3,8 +3,8 @@ import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const PrivateRoute = ({children, ...rest}) => {
+  let location = useLocation();
     const {user, loading} = useAuth();
-    let location = useLocation();
 
     if(loading){
       return   <div class="d-flex justify-content-center">
@@ -14,7 +14,7 @@ const PrivateRoute = ({children, ...rest}) => {
     </div> 
       
     };
-            if(user.email){
+            if(user?.email){
                 return children;
                 
             }

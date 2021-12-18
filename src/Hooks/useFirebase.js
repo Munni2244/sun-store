@@ -74,6 +74,7 @@ Initialization();
     
           ///sign out
           const logOut=()=>{
+              setLoading(true)
             signOut(auth).then(() => {
             //  setUser({})
                }).catch((error) => {
@@ -103,7 +104,7 @@ Initialization();
             .then(data=>setAdmin(data?.admin))
             .finally(()=> setLoading(false))
     
-        },[user.email]);
+        },[user?.email]);
     
         return {
             user,
