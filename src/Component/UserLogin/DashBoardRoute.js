@@ -14,7 +14,7 @@ const DashBoardRoute = ({children, ...rest}) => {
       </div>
        
     };
-            if(user.email){
+            if(user?.email){
                 return children;
                 
             }

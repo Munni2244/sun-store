@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import Offer from '../Offers/Offer';
 import HomeProducts from '../Products/HomeProducts/HomeProducts';
+import Products from '../Products/Products/Products';
 import Review from '../Review/Review';
 
 const Home = () => {
@@ -27,6 +28,7 @@ const {loading}=useAuth();
             <Offer></Offer>
             <HomeProducts></HomeProducts>
             <Exploremore></Exploremore>
+            <Products></Products>
             <Review></Review>
             <Footer></Footer>
         </div>

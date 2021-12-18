@@ -59,8 +59,23 @@ Initialization();
     
         ///on state change
     
+        // useEffect(() => {
+        //     setLoading(true)
+        //  onAuthStateChanged(auth, (user) => {
+        //         if (user) {
+        //             setUser(user)
+        //         } else {
+        //             setUser({})
+        //         }
+        //         setLoading(false)
+        //     });
+        
+    
+        // }, [])
+
         useEffect(() => {
-            const unSubscribe = onAuthStateChanged(auth, (user) => {
+            setLoading(true)
+            onAuthStateChanged(auth, (user) => {
                 if (user) {
                     setUser(user)
                 } else {
@@ -68,9 +83,8 @@ Initialization();
                 }
                 setLoading(false)
             });
-            return () => unSubscribe;
+        }, [auth])
     
-        }, [])
     
           ///sign out
           const logOut=()=>{
@@ -105,6 +119,8 @@ Initialization();
             .finally(()=> setLoading(false))
     
         },[user?.email]);
+
+        
     
         return {
             user,

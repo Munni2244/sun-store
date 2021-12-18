@@ -36,6 +36,31 @@
     },
     {
       "name": "Bata",
+      "gender":"female",
+      "id": "6",
+      "price":"700",
+      "desc": "Bata Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/Y0Ht6gZT/img10.jpg"
+    },
+    {
+      "name": "Bata",
+      "gender":"female",
+      "id": "6",
+      "price":"700",
+      "desc": "Bata Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/Y0Ht6gZT/img10.jpg"
+    },
+    {
+      "name": "Bata",
+      "gender":"female",
+      "id": "6",
+      "price":"700",
+      "desc": "Bata Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
+      "img": "https://i.postimg.cc/Y0Ht6gZT/img10.jpg"
+    },
+    {
+      "name": "Bata",
+      "gender":"female",
       "id": "6",
       "price":"700",
       "desc": "Bata Originals has been teaming up with Parley Ocean Plastic® since 2015 to develop innovative materials from recycled bottles to help minimize the environmental effects of such waste. These retro-inspired 'ZX 10,000 C' sneakers are made from Primeblue ripstop and paneled with suede and leather. The neutral colorway will work with so many different outfits.",
