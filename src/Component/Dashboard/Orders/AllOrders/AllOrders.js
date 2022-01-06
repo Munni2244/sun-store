@@ -61,7 +61,7 @@ const AllOrders = () => {
     return (
        
         <div >
-        <div className="m-3">
+        <div className="">
             <h1 className="text-center text-danger mb-4">All Orders</h1>
             <div className="table-responsive">
                 <table className="table  table-hover">
@@ -90,9 +90,9 @@ const AllOrders = () => {
                                     <td>{orders.address}</td>
                                     <td>{orders.price}</td>
                                     <td className='fw-bold'>{orders.status} 
-                                    <button style={{backgroundColor:'#000099'}} onClick={() => ApproveBooking(orders._id)} className="btn rounded-pill text-light mx-2">Approve</button>
+                                    <button style={{backgroundColor:'#000099'}} onClick={() => ApproveBooking(orders._id)} className="btn ms-2 rounded-pill text-light">Approve</button>
 
-                                     <button   onClick={() => CancelBooking(orders._id)} className="btn btn-danger ms-1 rounded-pill">Cancel</button></td>
+                                     <button  style={{marginLeft:'75px'}}  onClick={() => CancelBooking(orders._id)} className="btn mt-2 btn-danger rounded-pill">Cancel</button></td>
 
                                 </tr>
                             </tbody>

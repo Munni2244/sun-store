@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword,updateProfile, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword,updateProfile, signInWithEmailAndPassword, signOut, getIdToken } from "firebase/auth";
 import Initialization from "../Firebase/firebase.init";
 
 
@@ -9,6 +9,7 @@ Initialization();
         const [user, setUser] = useState({});
         const [loading, setLoading] = useState(true);
         const [admin, setAdmin]=useState(false);
+        const [token, setToken]=useState('');
     
     
         const auth = getAuth();
@@ -58,26 +59,17 @@ Initialization();
         }
     
         ///on state change
-    
-        // useEffect(() => {
-        //     setLoading(true)
-        //  onAuthStateChanged(auth, (user) => {
-        //         if (user) {
-        //             setUser(user)
-        //         } else {
-        //             setUser({})
-        //         }
-        //         setLoading(false)
-        //     });
-        
-    
-        // }, [])
+
 
         useEffect(() => {
             setLoading(true)
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     setUser(user)
+                    getIdToken(user)
+                    .then(idToken=>{
+                        setToken(idToken);
+                    })
                 } else {
                     setUser({})
                 }
@@ -111,20 +103,28 @@ Initialization();
         }
       
         //get admin
-        useEffect(()=>{
-            setLoading(true);
-            fetch(`https://blooming-meadow-50062.herokuapp.com/users/${user?.email}`)
-            .then(res=>res.json())
-            .then(data=>setAdmin(data?.admin))
-            .finally(()=> setLoading(false))
-    
-        },[user?.email]);
-
+       
+        useEffect(() => {
+            setLoading(true)
+            fetch(`http://localhost:4000/checkAdmin/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+              if (data.role === 'admin'){
+                setAdmin(true);
+                setLoading(false)
+            }
+              else {
+                setLoading(false);
+                setAdmin(false);
+              }
+            })
+          }, [user.email])
         
     
         return {
             user,
             admin,
+            token,
             RegisterUser,
             loading,
             loginUser,

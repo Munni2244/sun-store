@@ -19,6 +19,10 @@ import Register from './Component/UserLogin/Register/Register';
 import AddProducts from './Component/Dashboard/Dashboard/AddProducts/AddProducts';
 import PrivateRoute from './Component/UserLogin/PrivateRoute';
 import DashBoardRoute from './Component/UserLogin/DashBoardRoute';
+import Products from './Component/Home/Products/Products/Products';
+import WomenShoes from './Component/Home/Categories/WomenShoes';
+import ManShoes from './Component/Home/Categories/ManShoes';
+import Pay from './Component/Dashboard/Pay/Pay';
 
 function App() {
   return (
@@ -27,8 +31,17 @@ function App() {
      <BrowserRouter>
      
      <Routes>
-       <Route path="/" element={<Home></Home>}>    </Route>
-       <Route path="home" element={<Home></Home>}></Route>
+       <Route path="/" element={<Home></Home>}>  
+       <Route path="products" element={<Products></Products>}></Route>
+         <Route path="women" element={<WomenShoes></WomenShoes>}></Route>
+         <Route path="/" element={<WomenShoes></WomenShoes>}></Route>
+         <Route path="home" element={<WomenShoes></WomenShoes>}></Route>
+         <Route path="man" element={<ManShoes></ManShoes>}></Route>
+         </Route>
+       <Route path="home" element={<Home></Home>}>
+        
+
+       </Route>
    
        <Route path="/moreProducts" element={<MoreProducts></MoreProducts>}></Route>
        <Route path="contact" element={<Contact></Contact>}></Route>
@@ -40,10 +53,11 @@ function App() {
        <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
        <Route path="addAdmin" element={<AddAdmin></AddAdmin>}></Route>
        <Route path="review" element={<AddReviews></AddReviews>}></Route>
-       <Route path="addProducts" element={<AddProducts></AddProducts>}></Route>
-     
+       <Route path="addProducts" element={<AddProducts></AddProducts>}></Route>     
+       <Route path={`pay/:id`} element={<Pay></Pay>}></Route>
 
        </Route>
+
        <Route path="/products/:orderId" element={<PrivateRoute><OrderPlace></OrderPlace></PrivateRoute>}></Route>
        <Route path="login" element={<Login></Login>}></Route>
        <Route path="register" element={<Register></Register>}></Route>

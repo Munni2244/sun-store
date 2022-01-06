@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import useAuth from '../../../Hooks/useAuth';
 import admin from '../../../Images/admin.png'
 
 const AddAdmin = () => {
+    const {token}=useAuth();
     const [email, setEmail] = useState('');
 
     const handleField = (e) => {
@@ -14,7 +16,11 @@ const AddAdmin = () => {
         const user={email};
         fetch('https://blooming-meadow-50062.herokuapp.com/addAdmin',{
          method: "PUT",
-         headers:{ "content-type": "application/json"},
+         headers:{ 
+            //  "authorization": `Bearer ${token}`,
+             "content-type": "application/json"
+            
+            },
          body: JSON.stringify(user)
         })
         .then(res=> res.json())

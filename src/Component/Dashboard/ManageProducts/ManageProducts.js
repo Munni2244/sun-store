@@ -73,9 +73,9 @@ const ManageProducts = () => {
                     manageProducts?.map(products=> 
                        
                         <div  data-aos="flip-up"  key={products._id}  className='col-12 col-lg-4 col-md-6  mb-5'>
-                        <div style={{ backgroundColor:"#000066"}} className=' text-center text-light p-4'> 
-                            <img src={products.img} width="260px" height="260px" alt="" />
-                            <div className='d-flex '>
+                        <div style={{ backgroundColor:"#000066"}} className=' text-center text-light '> 
+                            <img src={products.img} width="100%" height="260px" alt="" />
+                            <div className='d-flex m-2 p-2'>
                            <div>
                            <h5 className='ms-1 mt-2'>{products.name}</h5>
                           

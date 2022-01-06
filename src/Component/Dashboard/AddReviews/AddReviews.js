@@ -43,7 +43,7 @@ const AddReviews = () => {
                     <h1 className="mb-4 text-center fw-bold">Add Your Review</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
                                 <input {...register("name")} placeholder=" Your Name" defaultValue={user.displayName} /> <br />
-                                <input {...register("img")} placeholder="Your img" required /> <br />
+                                <input {...register("img")} placeholder="Your img" type="url" required /> <br />
 
                                 <input type="text" {...register("message")} placeholder="Enter your message" /> <br />
 

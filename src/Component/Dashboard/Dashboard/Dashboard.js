@@ -22,17 +22,16 @@ const Dashboard = () => {
                     <div className=''>
                    
                         <Link to="/dashboard"><button style={{border:'1px solid black',borderRadius:'20px',padding:'3px', width:'90%', backgroundColor:"#000099"}} className='btn text-light'>Dashboard</button></Link>
-                        <Link to="/"><i class="fas fa-home"></i> Go Home</Link>
+                        <Link to="/"><i className="fas fa-home"></i> Go Home</Link>
                        { !admin?  <div>
                         <Link to="myOrders"><i class="fas fa-luggage-cart"></i> My Orders</Link>
-                        <Link to="review"><i class="fas fa-star"></i> Add Review</Link>
-                        <Link to="pay"><i class="fab fa-amazon-pay"></i> Pay</Link>
+                        <Link to="review"><i className="fas fa-star"></i> Add Review</Link>
                        </div>:
                       <div>
-                            <Link to="allOrders"><i class="fas fa-shopping-basket"></i> All Orders </Link>
-                        <Link to="manageProducts"><i class="fab fa-product-hunt"></i> ManageProducts</Link>
-                        <Link to="addProducts"><i class="fab fa-product-hunt"></i> Add Products</Link>
-                        <Link to="addAdmin"><i class="fas fa-user-cog"></i> Add Admin</Link>
+                            <Link to="allOrders"><i className="fas fa-shopping-basket"></i> All Orders </Link>
+                        <Link to="manageProducts"><i className="fab fa-product-hunt"></i> ManageProducts</Link>
+                        <Link to="addProducts"><i className="fab fa-product-hunt"></i> Add Products</Link>
+                        <Link to="addAdmin"><i className="fas fa-user-cog"></i> Add Admin</Link>
                       </div> }
                        
                     </div>

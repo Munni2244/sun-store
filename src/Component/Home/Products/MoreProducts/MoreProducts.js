@@ -39,15 +39,15 @@ const MoreProducts = () => {
                     moreProducts?.map(products=>
                         <div data-aos="flip-up"    key={products._id} className='col-12 col-lg-3 col-md-6 moreProducts mb-5'>
                     <div className='product'> 
-                        <img src={products.img} width="260px" height="260px" alt="" />
-                        <div className='d-flex '>
+                        <img src={products.img} width="100%" height="260px" alt="" />
+                        <div className='d-flex p-1'>
                        <div>
                        <h5 className='text-secondary'>{products.name}</h5>
                         <p className='fw-bold'>${products.price}</p>
                        </div>
                        <Link to={`/products/${products._id}`}>
 
-                       <button  style={{border:'1px solid black' ,height:'35px', borderRadius:'20px',marginLeft:'80px'}} className='btn  mt-2'>Add to cart</button>
+                       <button  style={{border:'1px solid black' ,height:'35px', borderRadius:'20px',marginLeft:'40px'}} className='btn mt-2'>Buy Now</button>
                        </Link>
                       
                         </div>
