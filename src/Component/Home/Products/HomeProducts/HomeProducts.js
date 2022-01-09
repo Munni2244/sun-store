@@ -7,7 +7,6 @@ import 'aos/dist/aos.css';
 import useAuth from '../../../../Hooks/useAuth';
 
 const HomeProducts = () => {
-    // const { loading } = useAuth();
     const [homeProducts, setHomeProducts] = useState([]);
 
     useEffect(() => {
@@ -18,15 +17,6 @@ const HomeProducts = () => {
 
     }, [homeProducts])
 
-    // if (loading) {
-    //     return (
-    //         <div class="d-flex justify-content-center mt-4">
-    //             <div class="spinner-border" role="status">
-    //                 <span class="visually-hidden">Loading...</span>
-    //             </div>
-    //         </div>
-    //     )
-    // }
     return (
         <div style={{ marginTop: '100px' }} className='container'>
             <div className='row '>

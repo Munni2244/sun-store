@@ -5,7 +5,6 @@ import 'aos/dist/aos.css';
 import useAuth from '../../../Hooks/useAuth';
 
 const ManageProducts = () => {
-    const {loading}=useAuth();
 
     const [manageProducts, setManageProducts]=useState([]);
     useEffect(()=>{
@@ -54,15 +53,6 @@ const ManageProducts = () => {
 
     }
 
-    if(loading){
-        return(
-            <div class="d-flex justify-content-center mt-4">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )
-    }
 
     return (
         <div>
