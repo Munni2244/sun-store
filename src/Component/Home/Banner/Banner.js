@@ -1,7 +1,7 @@
 import React from 'react';
 import bn1 from '../../../Images/bn1.jpg';
 import bn2 from '../../../Images/bn6.jpg'
-import bn3 from '../../../Images/br.jpg'
+import bn3 from '../../../Images/bn2.jpg'
 import bn4 from '../../../Images/bn8.jpg'
 import bn5 from '../../../Images/bn3.jpg'
 

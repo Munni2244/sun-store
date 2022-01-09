@@ -11,16 +11,6 @@ import Products from '../Products/Products/Products';
 import Review from '../Review/Review';
 
 const Home = () => {
-const {loading}=useAuth();
-    if(loading){
-        return(
-            <div class="d-flex justify-content-center mt-4">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )
-    }
     return (
         <div>
             <Navigation></Navigation>

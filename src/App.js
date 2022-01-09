@@ -23,6 +23,7 @@ import Products from './Component/Home/Products/Products/Products';
 import WomenShoes from './Component/Home/Categories/WomenShoes';
 import ManShoes from './Component/Home/Categories/ManShoes';
 import Pay from './Component/Dashboard/Pay/Pay';
+import Error from './Error/Error';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
        <Route path="/products/:orderId" element={<PrivateRoute><OrderPlace></OrderPlace></PrivateRoute>}></Route>
        <Route path="login" element={<Login></Login>}></Route>
        <Route path="register" element={<Register></Register>}></Route>
+       <Route path="*/" element={<Error></Error>}></Route>
      </Routes>
      </BrowserRouter>
      </AuthProvider>

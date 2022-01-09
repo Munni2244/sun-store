@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Products = () => {
-    const { loading } = useAuth();
+    // const { loading } = useAuth();
     const [moreProducts, setMoreProducts] = useState([]);
 
     useEffect(() => {
@@ -17,15 +17,15 @@ const Products = () => {
 
     }, [moreProducts])
 
-    if (loading) {
-        return (
-            <div class="d-flex justify-content-center mt-4">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        )
-    }
+    // if (loading) {
+    //     return (
+    //         <div class="d-flex justify-content-center mt-4">
+    //             <div class="spinner-border" role="status">
+    //                 <span class="visually-hidden">Loading...</span>
+    //             </div>
+    //         </div>
+    //     )
+    // }
     return (
         <div  >
 

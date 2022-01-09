@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const WomenShoes = () => {
-    const {loading}=useAuth();
     const [womenShoes, setWomenShoes]= useState([]);
 
     useEffect(()=>{
@@ -14,15 +13,6 @@ const WomenShoes = () => {
    
     let allShoes= womenShoes.filter(shoes=> shoes.gender==='female')
 
-    if(loading){
-        return(
-            <div class="d-flex justify-content-center mt-4">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )
-    }
     return (
         <div>
               <div style={{ marginTop: '50px' }} className='row'>

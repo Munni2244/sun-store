@@ -1,0 +1,6 @@
+.error{
+    background-image: url('../Images/error.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

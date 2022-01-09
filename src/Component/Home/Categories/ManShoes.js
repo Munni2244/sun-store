@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const ManShoes = () => {
-    const {loading}=useAuth();
+
     const [manShoes, setManShoes]= useState([]);
 
     useEffect(()=>{
@@ -15,16 +15,7 @@ const ManShoes = () => {
     },[manShoes])
     let allShoes= manShoes.filter(shoes=> shoes.gender==='male')
 
-    ///loadin
-    if(loading){
-        return(
-            <div class="d-flex justify-content-center mt-4">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )
-    }
+    
 
     return (
         <div>

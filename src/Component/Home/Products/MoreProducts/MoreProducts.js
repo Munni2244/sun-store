@@ -8,7 +8,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import Footer from '../../Footer/Footer';
 
 const MoreProducts = () => {
-    const {loading}=useAuth();
+    // const {loading}=useAuth();
     const [moreProducts, setMoreProducts]= useState([]);
    
     useEffect(()=>{
@@ -17,17 +17,17 @@ const MoreProducts = () => {
         .then(data=>setMoreProducts(data))
         AOS.init();
 
-    },[])
+    },[moreProducts])
 
-    if(loading){
-        return(
-            <div class="d-flex justify-content-center mt-4">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )
-    }
+    // if(loading){
+    //     return(
+    //         <div class="d-flex justify-content-center mt-4">
+    //         <div class="spinner-border" role="status">
+    //           <span class="visually-hidden">Loading...</span>
+    //         </div>
+    //       </div>
+    //     )
+    // }
     return (
         <div  >
             <Navigation></Navigation>
