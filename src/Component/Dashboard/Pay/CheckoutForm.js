@@ -17,7 +17,7 @@ const CheckoutForm = ({ payment }) => {
     const [process, setProcess] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:4000/create-payment-intent', {
+        fetch('https://blooming-meadow-50062.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -88,7 +88,7 @@ const CheckoutForm = ({ payment }) => {
                    last4: paymentIntent.last4,
                    transaction:paymentIntent.client_secret.slice('_secret')[0]
             }
-            fetch(`http://localhost:4000/orders/${_id}`, {
+            fetch(`https://blooming-meadow-50062.herokuapp.com/orders/${_id}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

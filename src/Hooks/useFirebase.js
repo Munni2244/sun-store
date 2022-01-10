@@ -62,7 +62,6 @@ Initialization();
 
 
         useEffect(() => {
-            setLoading(true)
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     setUser(user)
@@ -106,7 +105,7 @@ Initialization();
        
         useEffect(() => {
             setLoading(true)
-            fetch(`http://localhost:4000/checkAdmin/${user?.email}`)
+            fetch(`https://blooming-meadow-50062.herokuapp.com/checkAdmin/${user?.email}`)
             .then(res => res.json())
             .then(data => {
               if (data.role === 'admin'){

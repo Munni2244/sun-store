@@ -14,11 +14,11 @@ const Pay = () => {
     const [payment, setPayment] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:4000/payment/${id}`)
+        fetch(`https://blooming-meadow-50062.herokuapp.com/payment/${id}`)
             .then(res => res.json())
             .then(data => setPayment(data))
     }, [id])
-
+console.log(payment);
     return (
         <div>
             <div className='text-center mt-3 mb-4'>
